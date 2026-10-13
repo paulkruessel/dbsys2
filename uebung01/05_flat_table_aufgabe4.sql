@@ -1,0 +1,17 @@
+SELECT
+    CUSTOMER_AGE AS Alter_Kunde,
+    NVL(HANDY, 0) AS HANDY_ANZAHL,
+    NVL(TV, 0) AS TV_ANZAHL,
+    NVL(DVD, 0) AS DVD_ANZAHL,
+    NVL(FOTO, 0) AS FOTO_ANZAHL
+FROM VERKAUF_2DC
+PIVOT (
+    SUM(TOTAL_AMOUNT)
+    FOR PRODUCT_CATEGORY IN (
+        'TV' AS TV,
+        'DVD' AS DVD,
+        'Foto' AS FOTO,
+        'Handy' AS HANDY
+    )
+)
+WHERE CUSTOMER_AGE <> 'alle';
