@@ -44,8 +44,6 @@ CREATE TABLE Seller (
 
 CREATE TABLE Sale(
     Sale_ID NUMBER PRIMARY KEY,
-    Customer_Age NUMBER(10,0) NOT NULL,
-    CHECK (Customer_Age > 0),
     Amount NUMBER(10, 0),
     CHECK (Amount > 0),
     Turnover NUMBER(10,2),
