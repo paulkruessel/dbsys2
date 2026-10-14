@@ -1,4 +1,3 @@
-
 SELECT
     CASE
         WHEN GROUPING(seller.SELLER_ID) = 1 THEN 'alle'
@@ -7,12 +6,10 @@ SELECT
 
     CASE
         WHEN GROUPING(
-            EXTRACT(YEAR FROM SYSDATE) -
-            EXTRACT(YEAR FROM seller.DATE_OF_BIRTH)
+            TRUNC(MONTHS_BETWEEN(SYSDATE, seller.DATE_OF_BIRTH) / 12)
         ) = 1 THEN 'alle'
         ELSE TO_CHAR(
-            EXTRACT(YEAR FROM SYSDATE) -
-            EXTRACT(YEAR FROM seller.DATE_OF_BIRTH)
+            TRUNC(MONTHS_BETWEEN(SYSDATE, seller.DATE_OF_BIRTH) / 12)
         )
     END AS AGE_OF_SELLER,
 
@@ -40,9 +37,10 @@ JOIN Seller seller
     ON seller.SELLER_ID = s.SELLER_ID
 
 GROUP BY CUBE (
-    (seller.SELLER_ID,
-     EXTRACT(YEAR FROM SYSDATE) -
-     EXTRACT(YEAR FROM seller.DATE_OF_BIRTH)),
+    (
+        seller.SELLER_ID,
+        TRUNC(MONTHS_BETWEEN(SYSDATE, seller.DATE_OF_BIRTH) / 12)
+    ),
     t.YEAR,
     p.PRODUCT_CATEGORY
 )
