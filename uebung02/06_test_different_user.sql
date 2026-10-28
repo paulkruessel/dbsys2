@@ -1,9 +1,9 @@
 -- Change db username of mueller to something else
-UPDATE pers
-SET db_username = 'DBSYS14'
-WHERE pnr = 123;
+-- UPDATE pers
+-- SET db_username = 'DBSYS09'
+-- WHERE pnr = 123;
 
-commit;
+-- commit;
 
 -- run these tests as the new account, as this is now not owner of the views
 -- read own data, expected: 1 row (Mueller)
@@ -15,6 +15,7 @@ SELECT * FROM dbsys13.mypers;
 -- change own beruf, expected: 1 row updated
 UPDATE dbsys13.myself
 SET beruf = 'Fullstack Developer';
+SELECT * FROM dbsys13.myself;
 
 -- change own gehalt via myself, expected: ERROR insufficient privileges
 -- (gehalt is not in GRANT UPDATE on myself)
