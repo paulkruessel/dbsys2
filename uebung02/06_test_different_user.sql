@@ -1,9 +1,9 @@
 -- Change db username of mueller to something else
--- UPDATE pers
--- SET db_username = 'DBSYS09'
--- WHERE pnr = 123;
+UPDATE pers
+SET db_username = 'DBSYS09'
+WHERE pnr = 123;
 
--- commit;
+commit;
 
 -- run these tests as the new account, as this is now not owner of the views
 -- read own data, expected: 1 row (Mueller)
