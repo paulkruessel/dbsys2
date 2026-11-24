@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Database>
+  <Setting type="32">
+    <Driver></Driver>
+    <DriverFiles></DriverFiles>
+    <Dialect></Dialect>
+    <DriverClass></DriverClass>
+    <URL></URL>
+    <UserName></UserName>
+    <EncryptedPassword>32F3ACE632ECEBAFB24DCAF99A8C6CDC</EncryptedPassword>
+    <HostName></HostName>
+    <PortNO></PortNO>
+    <DBName></DBName>
+    <ServiceName></ServiceName>
+    <ServerName></ServerName>
+    <SelectedForm>true</SelectedForm>
+  </Setting>
+  <Setting type="16">
+    <Driver>Oracle9i/10g (or above)</Driver>
+    <DriverFiles>/home/paul/Downloads/ojdbc11.jar</DriverFiles>
+    <Dialect>org.hibernate.dialect.Oracle12cDialect</Dialect>
+    <DriverClass>oracle.jdbc.OracleDriver</DriverClass>
+    <URL>jdbc:oracle:thin:@//oracle26ai.in.htwg-konstanz.de:1521/or26pdb</URL>
+    <UserName>dbsys13</UserName>
+    <EncryptedPassword>45D105F45274E7A0BBD463C7533A6089</EncryptedPassword>
+    <HostName>oracle26ai.in.htwg-konstanz.de</HostName>
+    <PortNO>1521</PortNO>
+    <DBName></DBName>
+    <ServiceName></ServiceName>
+    <ServerName></ServerName>
+    <SelectedForm>false</SelectedForm>
+  </Setting>
+</Database>
