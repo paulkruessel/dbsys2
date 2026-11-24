@@ -1,5 +1,6 @@
 {
     "java.project.referencedLibraries": [
-        "uebung02/lib/**/*.jar"
+        "uebung02/lib/**/*.jar",
+        "uebung04/lib/**/*.jar"
     ]
 }
